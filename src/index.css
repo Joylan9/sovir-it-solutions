@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base layer */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+/* Responsive debugging - remove in production */
+.debug-responsive::before {
+  content: 'base';
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: #6b7280; /* Gray-500 */
+  color: white;
+  padding: 2px 6px;
+  font-size: 12px;
+  z-index: 9999;
+}
+
+@media (min-width: 640px) {
+  .debug-responsive::before {
+    content: 'sm';
+    background: #ef4444; /* Red-500 */
+  }
+}
+
+@media (min-width: 768px) {
+  .debug-responsive::before {
+    content: 'md';
+    background: #f97316; /* Orange-500 */
+  }
+}
+
+@media (min-width: 1024px) {
+  .debug-responsive::before {
+    content: 'lg';
+    background: #eab308; /* Yellow-500 */
+  }
+}
+
+@media (min-width: 1280px) {
+  .debug-responsive::before {
+    content: 'xl';
+    background: #22c55e; /* Green-500 */
+  }
+}
