@@ -2,6 +2,7 @@
   "name": "sovir-it-solutions",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://Joylan9.github.io/sovir-it-solutions",
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.8.0",
@@ -18,13 +19,15 @@
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
+    "gh-pages": "^6.3.0",
     "postcss-cli": "^11.0.1"
   },
   "scripts": {
     "build:css": "postcss src/index.css -o src/tailwind-output.css",
     "start": "npm run build:css && react-scripts start",
     "build": "npm run build:css && react-scripts build",
-    "postinstall": "npm run build:css",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
